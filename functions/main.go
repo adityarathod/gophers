@@ -45,6 +45,15 @@ func curriedQuadraticSolver(a float64) func(float64) func(float64) []float64 {
 	}
 }
 
+// Sum a bunch of numbers.
+func sum(numbers ...int) int {
+	total := 0
+	for _, num := range numbers {
+		total += num
+	}
+	return total
+}
+
 func main() {
 	fmt.Println("Let's do functions!")
 	fmt.Println("Fibonacci numbers:")
@@ -65,5 +74,8 @@ func main() {
 	fmt.Println("Solving a quadratic equation with a = 1, b = 20, c = 3 (x^2 + 20x + 3 = 0)")
 	a, b, c = 1.0, 20.0, 3.0
 	fmt.Println("curriedQuadraticSolver(a)(b)(c) =", curriedQuadraticSolver(a)(b)(c))
+
+	fmt.Println("Variadic function example:")
+	fmt.Println("sum(1, 2, 3, 4, 5) =", sum(1, 2, 3, 4, 5))
 
 }
